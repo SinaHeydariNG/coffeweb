@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="about_section layout_padding">
+    <div class="container">
+       <div class="row">
+          <div class="col-md-6">
+             <div class="about_taital_main">
+                <div class="about_taital">{{about.title}}</div>
+                <p class="about_text">{{about.description | safe}}</p>
+                <div class="read_bt"><a href="#">بیشتر</a></div>
+             </div>
+          </div>
+          <div class="col-md-6">
+             <div class="about_img"><img src="{% static 'images/about-img.png' %}"></div>
+          </div>
+       </div>
+    </div>
+ </div>
+ {% endblock content %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}                         
+<div class="gallery_section layout_padding">
+    <div class="container">
+       <div class="row">
+          <div class="col-sm-12">
+             <h1 class="gallery_taital">گالری ما</h1>
+             <p class="gallery_text"> ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روز</p>
+          </div>
+       </div>
+       <div class="">
+          <div class="gallery_section_2">
+             <div class="row">
+
+
+                         {% for galley in galleries %}
+                <div class="col-md-4">
+                   <div class="container_main">
+                      <img src="{{galley.images.url}}" alt="Avatar" class="image">
+                      <div class="overlay">
+                         <div class="text"><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></div>
+                      </div>
+                   </div>
+
+                </div>
+  {% endfor %}
+ 
+             </div>
+          </div>
+       </div>
+       <div class="seemore_bt"><a href="#">بیشتر</a></div>
+    </div>
+ </div>
+{% endblock content %}

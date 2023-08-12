@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+<div class="services_section layout_padding">
+    <div class="container">
+       <div class="row">
+          <div class="col-sm-12">
+             <h1 class="services_taital">سرویس ها</h1>
+             <p class="services_text">ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلک</p>
+          </div>
+       </div>
+       <div class="services_section_2">
+        <div class="row">
+          {% for service in services %}
+           <div class="col-lg-4 col-sm-12 col-md-4">
+              <div class="box_main active">
+                 <div class="house_icon">
+                    <img src="{{service.images.url}}" class="image_1">
+                    <img src="{{service.images.url}}" class="image_2">
+                 </div>
+                 <h3 class="decorate_text">{{service.title}}</h3>
+                 <p class="tation_text">{{service.description | safe}}</p>
+                 <div class="readmore_bt"><a href="#">بیشتر</a></div>
+              </div>
+           </div>
+           {% endfor %}
+        </div>
+     
+     </div>
+    </div>
+ </div>
+
+
+
+{% endblock content %}
